@@ -5,7 +5,7 @@
 It just same as gitignore.io ( https://www.gitignore.io/docs )
 
 ```bash
-echo "function li() { curl -L -s https://lisencedownload.herokuapp.com/\$@ ;}" >> ~/.bashrc && source ~/.bashrc
+echo "function li() { curl -L -s https://licensedownload.herokuapp.com/\$@ ;}" >> ~/.bashrc && source ~/.bashrc
 ```
 
 ```bash
