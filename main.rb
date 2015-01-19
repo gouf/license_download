@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/base'
-require_relative 'lisence_list'
+require_relative 'license_list'
 require 'active_support'
 require 'active_support/core_ext'
 
