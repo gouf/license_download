@@ -1,0 +1,11 @@
+{
+  "name": "License File Download",
+  "description": "Download a lisence descriptions file",
+  "keywords": [
+    "small",
+    "lisence",
+    "tool"
+  ],
+  "addons": [],
+  "env": {}
+}
