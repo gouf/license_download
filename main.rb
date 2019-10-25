@@ -5,6 +5,23 @@ require 'active_support'
 require 'active_support/core_ext'
 
 class LicenseDownload < Sinatra::Base
+  private
+
+  def valid_license_name?(license_name)
+    LICENSE_LIST.map { |key, _value| key }.include?(license_name)
+  end
+
+  def read_specified_file(license_name)
+    File.read("license_files/#{LICENSE_LIST[license_name]}")
+  end
+
+  def license_name
+    params[:splat].to_a
+                  .first
+                  .delete('/')
+                  .to_sym
+  end
+
   def error_message
     message = "Please specify a type of license name.\n"
     message << "\n"
@@ -14,12 +31,8 @@ class LicenseDownload < Sinatra::Base
   end
 
   get '*' do
-    license_name = params[:splat].to_a.first.delete('/').to_sym
+    return error_message unless valid_license_name?(license_name)
 
-    if LICENSE_LIST.map { |key, _value| key }.exclude? license_name
-      error_message
-    else
-      File.read "license_files/#{LICENSE_LIST[license_name]}"
-    end
+    read_specified_file(license_name)
   end
 end
