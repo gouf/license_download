@@ -8,7 +8,7 @@ class LicenseDownload < Sinatra::Base
   private
 
   def valid_license_name?(license_name)
-    LICENSE_LIST.map { |key, _value| key }.include?(license_name)
+    LICENSE_LIST.keys.include?(license_name)
   end
 
   def read_specified_file(license_name)
