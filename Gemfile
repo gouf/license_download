@@ -8,3 +8,7 @@ ruby '2.6.5'
 
 gem 'activesupport'
 gem 'sinatra'
+
+group :development do
+  gem 'rubocop'
+end
