@@ -23,9 +23,14 @@ class LicenseDownload < Sinatra::Base
   end
 
   def error_message
-    message = "Please specify a type of license name.\n"
+    message = ''
+    message << "\e[1m" # To Bold
+    message << "\e[93m" # To LightYellow
+    message << "Please specify a type of license name.\n"
     message << "\n"
+    message << "\e[94m" # To LightBlue
     message << "Supported list:\n"
+    message << "\e[0m" # Reset all style
     message << LICENSE_LIST.map { |key, _value| key }.join(', ')
     message << "\n"
   end
