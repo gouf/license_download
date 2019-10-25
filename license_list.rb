@@ -1,4 +1,6 @@
+# rubocop: disable Layout/AlignHash
 
+# Key => File Name
 LICENSE_LIST = {
   apache:    'apache_license_2.0',
   artistic:  'artistic_license_2.0',
@@ -15,4 +17,5 @@ LICENSE_LIST = {
   nbsd:      'new_bsd',
   unlicense: 'public_domain_unlicense',
   sbsd:      'simplified_bsd'
-}
+}.freeze
+# rubocop: enable Layout/AlignHash
